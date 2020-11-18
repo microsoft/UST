@@ -88,11 +88,10 @@ If you use this code, please cite:
     title = "Uncertainty-aware Self-training for Few-shot Text Classification",
     author = "Mukherjee, Subhabrata  and
       Hassan Awadallah, Ahmed",
-    booktitle = "Advances in Neural Information Processing Systems 33 pre-proceedings (NeurIPS 2020)",
+    booktitle = "Advances in Neural Information Processing Systems (NeurIPS 2020)",
     year = "2020",
     address = "Online",
     url = "https://papers.nips.cc/paper/2020/file/f23d125da1e29e34c552f448610ff25f-Paper.pdf",
-    abstract = "Recent success of pre-trained language models crucially hinges on fine-tuning them on large amounts of labeled data for the downstream task, that are typically expensive to acquire or difficult to access for many applications. We study self-training as one of the earliest semi-supervised learning approaches to reduce the annotation bottleneck by making use of large-scale unlabeled data for the target task. Standard self-training mechanism randomly samples instances from the unlabeled pool to generate pseudo-labels and augment labeled data. We propose an approach to improve self-training by incorporating uncertainty estimates of the underlying neural network leveraging recent advances in Bayesian deep learning. Specifically, we propose (i) acquisition functions to select instances from the unlabeled pool leveraging Monte Carlo (MC) Dropout, and (ii) learning mechanism leveraging model confidence for self-training. As an application, we focus on text classification with five benchmark datasets. We show our methods leveraging only 20-30 labeled samples per class for each task for training and for validation perform within 3% of fully supervised pre-trained language models fine-tuned on thousands of labels with an aggregate accuracy of 91% and improvement of up to 12% over baselines.",
 }
 ```
 
