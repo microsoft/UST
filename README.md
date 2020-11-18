@@ -2,7 +2,7 @@
 
 **UST** or **U**ncertainty-aware **S**elf-**T**raining is a method of task-specific training of pre-trainined language models (e.g., BERT, Electra, GPT) with only a few-labeled examples for the target classification task and large amounts of unlabeled data.
 
-Our academic paper published as a spotlight presentation at NeurIPS 2020 describes the framework in details here: [Uncertainy-aware Self-training for Few-shot Text Classification](https://www.microsoft.com/en-us/research/publication/uncertainty-self-training-few-shot-bert/)
+Our academic paper published as a spotlight presentation at **NeurIPS 2020** describes the framework in details here: [Uncertainy-aware Self-training for Few-shot Text Classification](https://www.microsoft.com/en-us/research/publication/uncertainty-self-training-few-shot-bert/)
 
 ## Key Result
 
@@ -35,6 +35,8 @@ UST is integrated with [HuggingFace Transformers](https://huggingface.co/transfo
 ### Training UST
 
 UST requires 3 input files `train.tsv` and `test.tsv` with tab-separated (i) instances (e.g., SST and IMDB) or pairs of instances (e.g., MRPC and MNLI) and (ii) labels; and `transfer.txt` for the unlabeled instances of the corresponding task (all line-separated) in the data directory.
+
+The code has been tested with `Tensorflow 2.3.1`, `Transformers 3.3.1` and `Python 3.6.9`. Install all the required dependencies with `pip install -r requirements.txt`.
 
 These are some standard set of arugments to run UST for the few-shot setting. Refer to `run_ust.py` for all the optional arugments and descriptions.
 
