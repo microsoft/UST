@@ -45,8 +45,8 @@ if __name__ == '__main__':
 	parser.add_argument("--pt_teacher", nargs="?", default="TFBertModel",help="Pre-trained teacher model")
 	parser.add_argument("--pt_teacher_checkpoint", nargs="?", default="bert-base-uncased", help="teacher model checkpoint to load pre-trained weights")
 	parser.add_argument("--do_pairwise", action="store_true", default=False, help="whether to perform pairwise classification tasks like MNLI")
-	parser.add_argument("--hidden_dropout_prob", nargs="?", type=float, default=0.3, help="dropout probability for hidden layer of teacher model")
-	parser.add_argument("--attention_probs_dropout_prob", nargs="?", type=float, default=0.3, help="dropout probability for attention layer of teacher model")
+	parser.add_argument("--hidden_dropout_prob", nargs="?", type=float, default=0.2, help="dropout probability for hidden layer of teacher model")
+	parser.add_argument("--attention_probs_dropout_prob", nargs="?", type=float, default=0.2, help="dropout probability for attention layer of teacher model")
 	parser.add_argument("--dense_dropout", nargs="?", type=float, default=0.5, help="dropout probability for final layers of teacher model")
 
 	args = vars(parser.parse_args())
@@ -94,7 +94,7 @@ if __name__ == '__main__':
 		logger.info ("Example {}".format(i))
 		logger.info ("Token ids {}".format(X_train_all["input_ids"][i]))
 		logger.info (tokenizer.convert_ids_to_tokens(X_train_all["input_ids"][i]))
-		logger.info ("Token type ids {}".format(X_train_all["token_type_ids"][i]))
+		#logger.info ("Token type ids {}".format(X_train_all["token_type_ids"][i]))
 		logger.info ("Token mask {}".format(X_train_all["attention_mask"][i]))
 		logger.info ("Label {}".format(y_train_all[i]))
 
@@ -103,7 +103,7 @@ if __name__ == '__main__':
 		logger.info ("Example {}".format(i))
 		logger.info ("Token ids {}".format(X_test["input_ids"][i]))
 		logger.info (tokenizer.convert_ids_to_tokens(X_test["input_ids"][i]))
-		logger.info ("Token type ids {}".format(X_test["token_type_ids"][i]))
+		#logger.info ("Token type ids {}".format(X_test["token_type_ids"][i]))
 		logger.info ("Token mask {}".format(X_test["attention_mask"][i]))
 		logger.info ("Label {}".format(y_test[i]))
 
@@ -112,7 +112,7 @@ if __name__ == '__main__':
 		logger.info ("Example {}".format(i))
 		logger.info ("Token ids {}".format(X_unlabeled["input_ids"][i]))
 		logger.info (tokenizer.convert_ids_to_tokens(X_unlabeled["input_ids"][i]))
-		logger.info ("Token type ids {}".format(X_unlabeled["token_type_ids"][i]))
+		#logger.info ("Token type ids {}".format(X_unlabeled["token_type_ids"][i]))
 		logger.info ("Token mask {}".format(X_unlabeled["attention_mask"][i]))
 
 	#labels indexed from 0

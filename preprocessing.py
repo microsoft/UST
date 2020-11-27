@@ -67,5 +67,10 @@ def generate_sequence_data(MAX_SEQUENCE_LENGTH, input_file, tokenizer, unlabeled
     for key in label_count.keys():
         logger.info ("Count of instances with label {} is {}".format(key, label_count[key]))
 
-    return {"input_ids": np.array(X["input_ids"]), "token_type_ids": np.array(X["token_type_ids"]), "attention_mask": np.array(X["attention_mask"])}, np.array(y)
+    if "token_type_ids" not in X:
+        token_type_ids = np.zeros((len(X["input_ids"]), MAX_SEQUENCE_LENGTH))
+    else:
+        token_type_ids = np.array(X["token_type_ids"])
+
+    return {"input_ids": np.array(X["input_ids"]), "token_type_ids": token_type_ids, "attention_mask": np.array(X["attention_mask"])}, np.array(y)
 
