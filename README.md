@@ -84,6 +84,18 @@ PYTHONHASHSEED=42 python run_ust.py
 --N_base 1
 ```
 
+*Examples of using other pre-trained language models* (defined in `huggingface_utils.py`):
+
+```
+--pt_teacher TFElectraModel 
+--pt_teacher_checkpoint google/electra-base-discriminator
+```
+
+```
+ --pt_teacher TFRobertaModel 
+ --pt_teacher_checkpoint roberta-base
+```
+
 If you use this code, please cite:
 ```
 @inproceedings{mukherjee-awadallah-2020-ust,
