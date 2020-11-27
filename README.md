@@ -84,17 +84,9 @@ PYTHONHASHSEED=42 python run_ust.py
 --N_base 1
 ```
 
-*Examples of using other pre-trained language models* (defined in `huggingface_utils.py`):
+*Dropouts* are the key for stochastic regularization and obtaining uncertainty estimates. However, too small values lead to less perturbation; whereas, too large values distort the pre-trained model attention mechanism. Good values of dropouts: BERT `--hidden_dropout_prob 0.3 --attention_probs_dropout_prob 0.3`, Electra/Roberta `--hidden_dropout_prob 0.2 --attention_probs_dropout_prob 0.2`
 
-```
---pt_teacher TFElectraModel 
---pt_teacher_checkpoint google/electra-base-discriminator
-```
-
-```
- --pt_teacher TFRobertaModel 
- --pt_teacher_checkpoint roberta-base
-```
+*Examples of using other pre-trained language models* (defined in `huggingface_utils.py`): Electra `--pt_teacher TFElectraModel --pt_teacher_checkpoint google/electra-base-discriminator` and Roberta `--pt_teacher TFRobertaModel --pt_teacher_checkpoint roberta-base`
 
 If you use this code, please cite:
 ```
