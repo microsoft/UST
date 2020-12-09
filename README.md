@@ -50,12 +50,11 @@ PYTHONHASHSEED=42 python run_ust.py
 --valid_split 0.5
 --pt_teacher TFBertModel
 --pt_teacher_checkpoint bert-base-uncased
---do_pairwise False
 --N_base 5
 --sup_batch_size 4
 ```
 
-*Classification tasks:* Set `do_pairwise` to True for pairwise classification tasks like MRPC and MNLI. 
+*Classification tasks:* Set `do_pairwise` for pairwise classification tasks like MRPC and MNLI. 
 
 *Sampling schemes*: Supported `sample scheme`: `uniform`, `easy_bald_class_conf` (sampling easy examples with uncertainty given by Eqn. 7 in paper), `dif_bald_class_conf` (sampling difficult examples given by Eqn. 8). `conf` enables confident learning, whereas `class` enables class dependent exploration. Additionally, you can append `soft` to the above sampling scheme (e.g., `easy_bald_class_conf_soft`) for leveraging majority predictions from `T` stochastic forward passes that works well for settings involving many classes / labels.
 
