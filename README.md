@@ -8,6 +8,16 @@ Our academic paper published as a spotlight presentation at **NeurIPS 2020** des
 
 With only *20-30* labeled examples for each class for each task and large amounts of task-specific unlabeled data, UST performs within *3%* accuracy of fully supervised pre-trained language models fine-tuned on thousands of labeled examples with an aggregate accuracy of *91%* and improvement of upto *12%* over baselines (e.g., BERT) for text classification on benchmark datasets. It does not use any auxiliary resources like paraphrases or backtranslations.
 
+The following table reports text classification results over 5 benchmark datasets averaged over over multiple runs.
+
+|               | BERT (30 labels) | UDA SSL (30 labels) | Classic self-training (30 labels) | Uncertainty-aware self-training (30 labels) | BERT (Supervised ~150K labels) |
+|---------------|------------------|---------------------|-----------------------------------|---------------------------------------------|--------------------------------|
+| SST           | 69.79            | 83.58               | 84.81                             | 87.69                                       | 92.12                          |
+| IMDB          | 73.03            | 89.3                | 78.97                             | 89.21                                       | 91.7                           |
+| Elec          | 82.92            | 89.64               | 89.92                             | 91.27                                       | 93.46                          |
+| AG News       | 80.74            | 85.92               | 84.62                             | 88.19                                       | 92.12                          |
+| Macro Average | 80.85            | 89.06               | 87.34                             | 91                                          | 93.73                          |
+
 ## How it works
 
 UST is a semi-supervised learning method that leverages pre-trained language models with stochastic regularization techniques and iterative self-training with student-teacher models. Specifically, it extends traditional self-training with three core components, namely: 
