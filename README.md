@@ -97,6 +97,13 @@ PYTHONHASHSEED=42 python run_ust.py
 
 *Examples of using other pre-trained language models* (defined in `huggingface_utils.py`): Electra `--pt_teacher TFElectraModel --pt_teacher_checkpoint google/electra-base-discriminator` and Roberta `--pt_teacher TFRobertaModel --pt_teacher_checkpoint roberta-base`
 
+### Datasets used in our paper:
+* [SST-2](https://dl.fbaipublicfiles.com/glue/data/SST-2.zip)
+* [IMDB](https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz)
+* [AG News](https://github.com/mhjabreel/CharCnn_Keras/tree/master/data/ag_news_csv)
+* [Elec](http://riejohnson.com/cnn_data.html)
+* [DBPedia](https://github.com/le-scientifique/torchDatasets/raw/master/dbpedia_csv.tar.gz)
+
 If you use this code, please cite:
 ```
 @inproceedings{mukherjee-awadallah-2020-ust,
