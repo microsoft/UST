@@ -30,13 +30,13 @@ UST is a semi-supervised learning method that leverages pre-trained language mod
 
 ## How to use the code
 
-### Continued Pre-training on Task-specific Unlabeled Data (Optional)
+### Continued Pre-training on Task-specific Unlabeled Data
 
 For the few-shot learning setting with limited training labels, continued pre-training on task-specific unlabeled data *starting from available pre-trained checkpoints* is an effective mechanism to obtain a good base encoder to initialize the teacher model for UST. Code for continued pre-trainining with masked language modeling objective can be found in the original BERT repo here: [https://github.com/google-research/bert](https://github.com/google-research/bert). This requires invoking the `create_pretraining_data.py` and the `run_pretraining.py` scripts from the repo with additional instructions therein. This produces a new tensorflow checkpoint that can be used as the pre-trained checkpoint for UST.
 
 You can use `transformers-cli` from [https://huggingface.co/transformers/converting_tensorflow_models.html](https://huggingface.co/transformers/converting_tensorflow_models.html) to convert tensorflow checkpoints (`ckpt`) to compatible checkpoints (`bin`) for HuggingFace transformers.
 
-*Note that this continued pre-training step in optional for UST, but required to reproduce the results in the paper*. In absence of this step, UST uses the default pre-trained checkpoints for any pre-trained langauge model which also works very well in practise.
+*Note that this continued pre-training step in optional for UST, but required to reproduce the results in the paper*. In absence of this step, UST uses the default pre-trained checkpoints for any pre-trained langauge model which also works well in practise. The continued pre-trained checkpoints for the tasks in the paper are available [here](https://drive.google.com/drive/folders/1KzUdbRzBh3gzPx-HoIGalTBC20Sz9x6J?usp=sharing) that can be used to initialize UST for the respective tasks.
 
 ### HuggingFace Transformers as Base Encoders
 
